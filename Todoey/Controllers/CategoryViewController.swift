@@ -92,9 +92,9 @@ class CategoryViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinatinVC = segue.destination as! TodoListViewController
+        let destinationVC = segue.destination as! TodoListViewController
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinatinVC.selectedCategory = catArray[indexPath.row]
+            destinationVC.selectedCategory = catArray[indexPath.row]
         }
     }
     

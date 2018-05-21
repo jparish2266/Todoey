@@ -27,7 +27,7 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
     }
     
     //MARK - Tableview Datasource Methods
@@ -94,7 +94,6 @@ class TodoListViewController: UITableViewController {
     }
     
     func loadItems(with request : NSFetchRequest<Item> = Item.fetchRequest(), predicate : NSPredicate? = nil) {
-        
         let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
         
         if let additionalPredicate = predicate {
@@ -105,8 +104,6 @@ class TodoListViewController: UITableViewController {
         
 //        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [compoundPredicate, predicate])
 //        request.predicate = compoundPredicate
-        
-        
         
         do {
             itemArray = try context.fetch(request)
